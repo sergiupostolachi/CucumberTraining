@@ -1,0 +1,8 @@
+#Directories and files to be excluded from git repository
+
+.classpath
+.project
+.settings
+.idea
+*.iml
+/target

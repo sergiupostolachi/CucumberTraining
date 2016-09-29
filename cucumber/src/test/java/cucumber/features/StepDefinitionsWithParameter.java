@@ -1,5 +1,7 @@
 package cucumber.features;
 
+import cucumber.AbstractStepDefinitions;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,18 +11,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.List;
+
 import static junit.framework.TestCase.assertTrue;
 
 /**
  * Created by P3700522 on 9/28/2016.
  */
-public class StepDefinitionsWithParameter {
-
-	WebDriver driver = null;
+public class StepDefinitionsWithParameter extends AbstractStepDefinitions{
 
 	@Given("^I navigate to lex site$")
 	public void shouldNavigateToLexShop() throws Throwable {
-		driver = new FirefoxDriver();
 		driver.navigate().to("https://www.lexshop.ro/");
 	}
 
@@ -42,7 +43,29 @@ public class StepDefinitionsWithParameter {
 		assertTrue("The element is not displayed", filterElement.isDisplayed());
 	}
 
+	@When("^I type a product in search field$")
+	public void shouldTypeASearchedProduct(DataTable dataTable) throws Throwable {
+		System.out.println(dataTable);
+		List<List<String>> data = dataTable.raw();
+		WebElement searchBox = driver.findElement(By.xpath(".//*[@id='search_text']"));
+		searchBox.sendKeys(data.get(1).get(1));
+	}
+
+	@And("^I search for a product$")
+	public void shouldClickOnSearchButton() throws Throwable {
+		WebElement searchButton= driver.findElement(By.xpath(".//*[@id='searchform']/input[3]"));
+		searchButton.click();
+	}
+
+	@Then("^I check the results are in place$")
+	public void checkTheSearchResults() throws Throwable {
+		WebElement searchResultsHead= driver.findElement(By.xpath(".//*[@id='body']/section/div[4]/h3"));
+		int numberOfResults = driver.findElements(By.xpath(".//*/div[2][@class='cele_mai_vandute no_mg']/div[contains(@class,'produs')]")).size();
+		assertTrue("No results", searchResultsHead.getText().contains(String.valueOf(numberOfResults)));
+	}
+
 	@And("^I close the browser$")
 	public void closeBrowser() throws Throwable {
+		driver.close();
 	}
 }

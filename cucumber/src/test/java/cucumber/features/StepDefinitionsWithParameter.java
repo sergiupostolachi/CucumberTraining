@@ -2,12 +2,12 @@ package cucumber.features;
 
 import cucumber.AbstractStepDefinitions;
 import cucumber.api.DataTable;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -19,6 +19,11 @@ import static junit.framework.TestCase.assertTrue;
  * Created by P3700522 on 9/28/2016.
  */
 public class StepDefinitionsWithParameter extends AbstractStepDefinitions{
+
+	@Before("@web")
+	public void setUp(){
+		this.driver = new FirefoxDriver();
+	}
 
 	@Given("^I navigate to lex site$")
 	public void shouldNavigateToLexShop() throws Throwable {
@@ -33,6 +38,18 @@ public class StepDefinitionsWithParameter extends AbstractStepDefinitions{
 
 	@Then("^I verify the \"([^\"]*)\" item$")
 	public void checkTheExistenceOfItem(String item) throws Throwable {
+		WebElement product = driver.findElement(By.xpath(item));
+		assertTrue("The Sequence product is not displayed", product.isDisplayed());
+	}
+
+	@When("^I access on ([^\"]*)$")
+	public void shouldClickOnLinkOutline(String link) throws Throwable {
+		WebElement topMenuLink = driver.findElement(By.xpath(link));
+		topMenuLink.click();
+	}
+
+	@Then("^I verify the ([^\"]*) item$")
+	public void checkTheExistenceOfItemOutline(String item) throws Throwable {
 		WebElement product = driver.findElement(By.xpath(item));
 		assertTrue("The Sequence product is not displayed", product.isDisplayed());
 	}

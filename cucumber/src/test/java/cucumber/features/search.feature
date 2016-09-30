@@ -1,5 +1,5 @@
 Feature: Search in LexShop site
-
+	@web
 	Scenario: Search for a product
 		Given I navigate to lex site
 		When I type a product in search field

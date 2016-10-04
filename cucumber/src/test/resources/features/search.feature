@@ -1,4 +1,6 @@
 Feature: Search in LexShop site
+
+	@Application
 	@web
 	Scenario: Search for a product
 		Given I navigate to lex site

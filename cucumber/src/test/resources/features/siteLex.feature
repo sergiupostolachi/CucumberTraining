@@ -1,4 +1,3 @@
-@smoke
 Feature: Navigation through LexShop menu
 	@web
 	Scenario: Test Deteriorate
@@ -16,12 +15,14 @@ Feature: Navigation through LexShop menu
 		Then I verify the filter ".//*/img[@src='/app/images/buton-lichidate.png']"
 		And I close the browser
 
+	@Server
 	@dummy
 	Scenario: Test dummy
 		Given I navigate to lex site
 		When I access ".//*/a[@href='/lichidari.html']"
 		Then I verify the filter ".//*/img[@src='/app/images/buton-lichidate.png']"
 
+	@Application
 	@web
 	Scenario Outline: Test LexShop menu
 		Given I navigate to lex site

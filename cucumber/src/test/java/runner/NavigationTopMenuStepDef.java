@@ -1,4 +1,4 @@
-package runs;
+package runner;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.After;
@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import step_definitions.AbstractStepDefinitions;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ import static junit.framework.TestCase.assertTrue;
 /**
  * Created by P3700522 on 9/28/2016.
  */
-public class NavigationTopMenuStepDef extends AbstractStepDefinitions{
+public class NavigationTopMenuStepDef extends AbstractStepDefinitions {
 
 	@Before("@web")
 	public void setUp(){

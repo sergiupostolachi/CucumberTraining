@@ -1,4 +1,4 @@
-package cucumber;
+package runs;
 
 
 import org.openqa.selenium.WebDriver;

@@ -1,7 +1,7 @@
-package cucumber.features;
+package runs;
 
-import cucumber.AbstractStepDefinitions;
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -18,11 +18,21 @@ import static junit.framework.TestCase.assertTrue;
 /**
  * Created by P3700522 on 9/28/2016.
  */
-public class StepDefinitionsWithParameter extends AbstractStepDefinitions{
+public class NavigationTopMenuStepDef extends AbstractStepDefinitions{
 
 	@Before("@web")
 	public void setUp(){
 		this.driver = new FirefoxDriver();
+	}
+
+	@Before("@dummy")
+	public void setUpDummy(){
+		this.driver = new FirefoxDriver();
+	}
+
+	@After("@dummy")
+	public void tearDownDummy(){
+		this.driver.close();
 	}
 
 	@Given("^I navigate to lex site$")

@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import step_definitions.AbstractStepDefinitions;
 
 import java.util.List;
@@ -85,10 +86,23 @@ public class NavigationTopMenuStepDef extends AbstractStepDefinitions {
 		searchButton.click();
 	}
 
+	@And("^I order the products by \"([^\"]*)\"$")
+	public void i_order_the_products_by(String selectOption) throws Throwable {
+		Select dropdown = new Select(driver.findElement(By.xpath(".//*[@id='body']/section/div[4]/div[1]/form/div[1]/select")));
+		dropdown.selectByVisibleText(selectOption);
+	}
+
+	@Then("^I filter products by \"([^\"]*)\"$")
+	public void i_filter_products_by(String filterStoc) throws Throwable {
+		WebElement inStoc= driver.findElement(By.id(filterStoc));
+		inStoc.click();
+	}
+
 	@Then("^I check the results are in place$")
 	public void checkTheSearchResults() throws Throwable {
 		WebElement searchResultsHead= driver.findElement(By.xpath(".//*[@id='body']/section/div[4]/h3"));
 		int numberOfResults = driver.findElements(By.xpath(".//*/div[2][@class='cele_mai_vandute no_mg']/div[contains(@class,'produs')]")).size();
+		System.out.println(numberOfResults);
 		assertTrue("No results", searchResultsHead.getText().contains(String.valueOf(numberOfResults)));
 	}
 

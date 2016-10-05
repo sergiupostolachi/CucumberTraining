@@ -21,6 +21,7 @@ Feature: Navigation through LexShop menu
 		Given I navigate to lex site
 		When I access ".//*/a[@href='/lichidari.html']"
 		Then I verify the filter ".//*/img[@src='/app/images/buton-lichidate.png']"
+		And I close the browser
 
 	@Application
 	@web
@@ -28,7 +29,7 @@ Feature: Navigation through LexShop menu
 		Given I navigate to lex site
 		When I access on <Link>
 		Then I verify the <Item> item
-		And I close the browser
+#		And I close the browser
 		Examples:
 			| Link                              | Item                                          |
 			| .//*/a[@href='/deteriorate.html'] | .//*/img[@title='sequence a']                 |

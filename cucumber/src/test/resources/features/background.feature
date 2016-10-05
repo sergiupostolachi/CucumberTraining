@@ -10,7 +10,7 @@ Feature: Navigation through LexShop menu using background script
 		Then I verify the ".//*/img[@title='sequence a']" item
 		And I verify the ".//*/img[@title='bruges a']" item
 		And I verify the ".//*/img[@title='ticket to ride anniversary']" item
-		And I close the browser
+#		And I close the browser
 
 @web
 @background

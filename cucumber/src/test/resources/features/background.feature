@@ -17,4 +17,4 @@ Feature: Navigation through LexShop menu using background script
 	Scenario: Test Lichidare
 		When I access ".//*/a[@href='/lichidari.html']"
 		Then I verify the filter ".//*/img[@src='/app/images/buton-lichidate.png']"
-		And I close the browser
+#		And I close the browser

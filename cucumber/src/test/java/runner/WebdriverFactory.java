@@ -9,16 +9,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 /**
  * Created by P3700522 on 10/5/2016.
  */
-public class AbstractPageStepDef {
+public class WebdriverFactory {
 
-	protected static WebDriver driver;
+	private static WebDriver driver;
 
-	protected WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		if (driver == null){
 			driver = new FirefoxDriver();
 		}
 		return driver;
 	}
+
+	public static void quit() {
+		driver.quit();
+		driver = null;
+	}
+
 
 
 }

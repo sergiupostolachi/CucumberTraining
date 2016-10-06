@@ -9,12 +9,14 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		format = {"pretty", "html:target/cucumber-reports/REPORT1.html"},
+//		glue = {""},
+//		format = {"pretty", "html:target/cucumber-reports/REPORT1.html"},
+		format = {"pretty", "json:target/cucumber-reports/REPORT1.json"},
 //		features = "src/test/resources/features/search.feature",
 		features = "src/test/resources/features",
 //		tags = {"@Application, @Server"}
 		tags = {"@background"}
-//		glue = {"om.pure360.automation.testcases.ui.stepdefinition"},
+//		glue = {"com.pure360.automation.testcases.ui.stepdefinition"},
 //		plugin = {"pretty", "json:target/cucumber-reports/REPORT1.json"}
 //		tags = {"@reports,@sms,@PRT-5917"}
 )

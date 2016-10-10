@@ -42,7 +42,7 @@ public class CommonPageStepDef {
 		WebElement searchResultsHead= WebdriverFactory.getDriver().findElement(By.xpath(".//*[@id='body']/section/div[4]/h3"));
 		int numberOfResults = WebdriverFactory.getDriver().findElements(By.xpath(".//div[2][@class='cele_mai_vandute no_mg']/div[contains(@class,'produs')]")).size();
 		System.out.println(numberOfResults);
-		assertTrue("No results", searchResultsHead.getText().contains(String.valueOf(numberOfResults)));
+		assertTrue("The number of search results are wrong", searchResultsHead.getText().contains(String.valueOf(numberOfResults)));
 	}
 
 	@When("^I access on ([^\"]*)$")

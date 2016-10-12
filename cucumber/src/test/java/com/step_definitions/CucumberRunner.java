@@ -1,4 +1,4 @@
-package runner;
+package com.step_definitions;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

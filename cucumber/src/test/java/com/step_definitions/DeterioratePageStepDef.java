@@ -1,8 +1,7 @@
-package runner;
+package com.step_definitions;
 
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static junit.framework.TestCase.assertTrue;
@@ -16,7 +15,7 @@ public class DeterioratePageStepDef extends WebdriverFactory {
 
 	@Then("^I verify the \"([^\"]*)\" item$")
 	public void checkTheExistenceOfItem(String item) throws Throwable {
-		WebElement product = WebdriverFactory.getDriver().findElement(By.xpath(item));
+		WebElement product = getDriver().findElement(By.xpath(item));
 		assertTrue("The Sequence product is not displayed", product.isDisplayed());
 	}
 

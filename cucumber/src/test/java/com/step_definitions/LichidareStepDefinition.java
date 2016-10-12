@@ -1,8 +1,7 @@
-package runner;
+package com.step_definitions;
 
 import com.pageObject.LichidariPage;
 import com.pageObject.TopMenuPage;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;

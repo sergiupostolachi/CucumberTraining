@@ -1,10 +1,7 @@
-package runner;
+package com.step_definitions;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by P3700522 on 10/6/2016.

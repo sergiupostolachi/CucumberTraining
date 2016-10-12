@@ -1,4 +1,4 @@
-package runner;
+package com.step_definitions;
 
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ public class LichidarePageStepDef extends WebdriverFactory {
 
 	@Then("^I verify the filter \"([^\"]*)\"$")
 	public void checkTheExistenceOfFilter(String filter) throws Throwable {
-		WebElement filterElement = WebdriverFactory.getDriver().findElement(By.xpath(filter));
+		WebElement filterElement = getDriver().findElement(By.xpath(filter));
 		assertTrue("The element is not displayed", filterElement.isDisplayed());
 	}
 

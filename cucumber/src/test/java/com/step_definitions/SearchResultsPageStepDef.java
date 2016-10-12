@@ -1,4 +1,4 @@
-package runner;
+package com.step_definitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -18,19 +18,19 @@ public class SearchResultsPageStepDef extends WebdriverFactory {
 
 	@Then("^I verify the ([^\"]*) item$")
 	public void checkTheExistenceOfItemOutline(String item) throws Throwable {
-		WebElement product = WebdriverFactory.getDriver().findElement(By.xpath(item));
+		WebElement product = getDriver().findElement(By.xpath(item));
 		assertTrue("The Sequence product is not displayed", product.isDisplayed());
 	}
 
 	@And("^I order the products by \"([^\"]*)\"$")
 	public void i_order_the_products_by(String selectOption) throws Throwable {
-		Select dropdown = new Select(WebdriverFactory.getDriver().findElement(By.xpath(".//*[@id='body']/section/div[4]/div[1]/form/div[1]/select")));
+		Select dropdown = new Select(getDriver().findElement(By.xpath(".//*[@id='body']/section/div[4]/div[1]/form/div[1]/select")));
 		dropdown.selectByVisibleText(selectOption);
 	}
 
 	@Then("^I filter products by \"([^\"]*)\"$")
 	public void i_filter_products_by(String filterStoc) throws Throwable {
-		WebElement inStoc = WebdriverFactory.getDriver().findElement(By.id(filterStoc));
+		WebElement inStoc = getDriver().findElement(By.id(filterStoc));
 		inStoc.click();
 	}
 

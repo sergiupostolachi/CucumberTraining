@@ -5,4 +5,8 @@
 test:
   override:
     - mvn test
-  
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master

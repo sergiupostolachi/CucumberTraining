@@ -18,5 +18,10 @@ public class TestExample {
 		assertEquals("This test fails", 1, 2);
 	}
 
+	@Test
+	public void testSomeFail2(){
+		System.out.println("Test");
+		assertEquals("This test fails", 1, 4);
+	}
 
 }

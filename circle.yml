@@ -1,0 +1,7 @@
+# Add some environment variables
+#environment:
+
+ test:
+  override:
+  - echo 'Nu sunt teste.'
+  

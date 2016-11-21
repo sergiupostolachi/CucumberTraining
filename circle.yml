@@ -1,7 +1,12 @@
 # Add some environment variables
 #environment:
 
- test:
+## Customize test commands
+test:
   override:
-  - echo 'Nu sunt teste.'
-  
+    - mvn test
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master

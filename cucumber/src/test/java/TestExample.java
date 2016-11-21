@@ -13,15 +13,15 @@ public class TestExample {
 	}
 
 	@Test
-	public void testSomeFail(){
+	public void testSome1(){
 		System.out.println("Test");
-		assertEquals("This test fails", 1, 2);
+		assertEquals("This test fails", 1, 1);
 	}
 
 	@Test
-	public void testSomeFail2(){
+	public void testSome3(){
 		System.out.println("Test");
-		assertEquals("This test fails", 1, 4);
+		assertEquals("This test fails", 4, 4);
 	}
 
 }

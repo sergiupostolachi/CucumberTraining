@@ -7,6 +7,11 @@ test:
     - mvn test
 
 ## Customize deployment commands
-deployment:
-  staging:
-    branch: master
+##deployment:
+##  staging:
+##    branch: master
+    
+general:
+  branches:
+    only:
+      - master

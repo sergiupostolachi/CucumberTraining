@@ -4,7 +4,7 @@
 ## Customize test commands
 test:
   override:
-    - mvn test -DconfigDir="https://gist.githubusercontent.com/sergiupostolachi/a0bf690b59745d149ee8cf52891b9fcb/raw/0b174a5ed9b6348d0d9a820475d5deff08e4deaa/TestConfi"
+    - mvn test -DconfigDir="https://gist.githubusercontent.com/sergiupostolachi/a0bf690b59745d149ee8cf52891b9fcb/raw/0b174a5ed9b6348d0d9a820475d5deff08e4deaa/TestConfig"
 
 ## Customize deployment commands
 ##deployment:

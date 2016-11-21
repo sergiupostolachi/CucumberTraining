@@ -4,14 +4,14 @@
 ## Customize test commands
 test:
   override:
-    - mvn test
+    - mvn test -DconfigDir="https://gist.github.com/sergiupostolachi/a0bf690b59745d149ee8cf52891b9fcb"
 
 ## Customize deployment commands
 ##deployment:
 ##  staging:
 ##    branch: master
     
-general:
-  branches:
-    only:
-      - master
+##general:
+##  branches:
+##    only:
+##      - master

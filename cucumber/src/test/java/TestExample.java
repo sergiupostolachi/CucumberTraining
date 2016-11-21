@@ -12,4 +12,11 @@ public class TestExample {
 		assertEquals(1,1);
 	}
 
+	@Test
+	public void testSomeFail(){
+		System.out.println("Test");
+		assertEquals("This test fails", 1, 2);
+	}
+
+
 }
